@@ -7,7 +7,7 @@ def build_model(pretrained=True, fine_tune=True, num_classes=10):
         print("[INFO]: Loading pre-trained weights")
     else:
         print("[INFO]: Not loading pre-trained weights")
-    model = models.efficientnet_v2_s(weights=pretrained)
+    model = models.densenet121(weights=pretrained)
 
     if fine_tune:
         print("[INFO]: Fine-tuning all layers...")
