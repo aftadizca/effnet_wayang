@@ -20,11 +20,11 @@ def save_model(epochs, model, optimizer, criterion, pretrained):
     )
 
 
-def save_model_all(model):
+def save_model_all(model, suffix):
     """
     Function to save the trained model to disk.
     """
-    torch.save(model, f"outputs/model_pretrained_{pretrained}_all.pt")
+    torch.save(model, f"outputs/model_{suffix}.pt")
 
 
 def save_plots(train_acc, valid_acc, train_loss, valid_loss, pretrained):
