@@ -15,7 +15,7 @@ DEVICE = "cpu"
 class_names = ["Bishop", "King", "Knight", "Pawn", "Queen", "Rook"]
 # Load the trained model.
 model = build_model(pretrained=False, fine_tune=False, num_classes=5)
-checkpoint = torch.load("../outputs/model_pretrained_True.pth", map_location=DEVICE)
+checkpoint = torch.load("/outputs/model_pretrained_True.pth", map_location=DEVICE)
 print("Loading trained model weights...")
 model.load_state_dict(checkpoint["model_state_dict"])
 
