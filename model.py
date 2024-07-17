@@ -21,5 +21,5 @@ def build_model(pretrained=True, fine_tune=True, num_classes=10):
     # Change the final classification head.
     # for effnetv2
     # model.classifier[1] = nn.Linear(in_features=1280, out_features=num_classes)
-    model.classifier[1] = nn.Linear(model.features, num_classes=num_classes)
+    model.classifier[1] = nn.Linear(model.features, num_classes)
     return model
