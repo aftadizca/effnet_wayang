@@ -110,7 +110,8 @@ if __name__ == "__main__":
     # Learning_parameters.
     lr = args["learning_rate"]
     epochs = args["epochs"]
-    device = torch_directml.device() if torch_directml.is_available() else "cpu"
+    # device = torch_directml.device() if torch_directml.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Computation device: {device}")
     print(f"Learning rate: {lr}")
     print(f"Epochs to train for: {epochs}\n")
