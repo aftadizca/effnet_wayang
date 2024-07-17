@@ -8,7 +8,7 @@ from tqdm.auto import tqdm
 
 from model import build_model
 from datasets import get_datasets, get_data_loaders
-from utils import save_model, save_plots
+from utils import save_model, save_plots, save_model_all
 
 # construct the argument parser
 parser = argparse.ArgumentParser()
@@ -152,6 +152,7 @@ if __name__ == "__main__":
 
     # Save the trained model weights.
     save_model(epochs, model, optimizer, criterion, args["pretrained"])
+    save_model(model)
     # Save the loss and accuracy plots.
     save_plots(train_acc, valid_acc, train_loss, valid_loss, args["pretrained"])
     print("TRAINING COMPLETE")
