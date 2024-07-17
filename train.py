@@ -97,8 +97,6 @@ def validate(model, testloader, criterion):
 
 
 if __name__ == "__main__":
-    dml = torch_directml.device()
-    print(torch_directml.is_available())
     # Load the training and validation datasets.
     dataset_train, dataset_valid, dataset_classes = get_datasets(args["pretrained"])
     print(f"[INFO]: Number of training images: {len(dataset_train)}")
