@@ -7,7 +7,7 @@ def build_model(pretrained=True, fine_tune=True, num_classes=10):
         print("[INFO]: Loading pre-trained weights")
     else:
         print("[INFO]: Not loading pre-trained weights")
-    model = models.densenet121(weights=pretrained)
+    model = models.densenet121(weights=pretrained, num_classes=num_classes)
 
     if fine_tune:
         print("[INFO]: Fine-tuning all layers...")
@@ -21,5 +21,5 @@ def build_model(pretrained=True, fine_tune=True, num_classes=10):
     # Change the final classification head.
     # for effnetv2
     # model.classifier[1] = nn.Linear(in_features=1280, out_features=num_classes)
-    model.classifier[1] = nn.Linear(num_features=64, num_classes=5)
+    # model.classifier[1] = nn.Linear(num_features=64, num_classes=5)
     return model
